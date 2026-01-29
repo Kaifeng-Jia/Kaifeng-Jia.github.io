@@ -1,9 +1,9 @@
 :root{
-  --topbar: #7fe6ff;   /* 浅蓝条 */
+  --topbar: #7fe6ff;  
   --text: #222;
   --muted: #666;
   --line: #b9b9b9;
-  --accent: #55d6ff;   /* 标题下划线的浅蓝 */
+  --accent: #55d6ff; 
 }
 
 *{ box-sizing: border-box; }
