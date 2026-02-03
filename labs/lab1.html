@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 1 | ECE 5160 Fast Robots</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">ECE 5160: Fast Robots</div>
+  </header>
+
+  <main class="page">
+    <div class="breadcrumbs">
+      <a href="../index.html#labs">← Back to Labs</a>
+    </div>
+
+    <article class="report">
+      
+      <h1>Lab 1: Artemis and Bluetooth</h1>
+
+      <section class="report-section">
+        <h2>Lab 1A</h2>
+
+        <h3>Prelab</h3>
+        <p>
+          I installed the Arduino IDE and the libraries for the SparkFun Apollo3 development board.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-tiny" src="lab1_assets/p1.jpg"/>
+    </figure>
+
+        <h3>Task 1 Connection</h3>
+        <p>
+          After connecting the Artemis development board to my laptop, I selected 'RedBoard Artemis Nano' as the board type and chose the corresponding USB port.
+        </p>
+        <figure class="media">
+      <img class="img-vert" src="lab1_assets/p2.jpg" />
+    </figure>
+
+        <h3>Task 2 Blink</h3>
+        <p>
+          By running the blink function in the example file, it was observed that the LED on the development board was blinking.
+        </p>
+        <div class="media">
+      <!-- Replace YOUTUBE_ID with your video id -->
+      <iframe class="video"
+        src="https://www.youtube.com/embed/UL_-3pxx8vo"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+
+        <h3>Task 3 Serial</h3>
+        <p>
+          Run the Serial function in the example file, select a baud rate of 115200, and enter text (such as "Hello World") in the Serial Monitor. Observe that the serial port outputs the text you just entered.
+        </p>
+        <div class="media">
+      <!-- Replace YOUTUBE_ID with your video id -->
+      <iframe class="video"
+        src="https://www.youtube.com/embed/w4NeTfbNqsM"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+
+        <h3>Task 4 AnalogRead</h3>
+        <p>
+          By running the AnalogRead function in the example file and opening the Serial Monitor,
+          we can see various parameters, including temperature, being printed.
+          Blowing on the development board will show the temperature changing.
+        </p>
+        <div class="media">
+      <!-- Replace YOUTUBE_ID with your video id -->
+      <iframe class="video"
+        src="https://www.youtube.com/embed/YiPY9XotZwc"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+
+        <h3>Task 5 Microphone Output</h3>
+        <p>
+          In this task, I opened the MicrophoneOutput example file and spoke into the development board's microphone.
+          I could then see the sound frequency being output in the serial monitor.
+        </p>
+        <div class="media">
+      <!-- Replace YOUTUBE_ID with your video id -->
+      <iframe class="video"
+        src="https://www.youtube.com/embed/DdLOOYyOPIE"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+
+        <h3>Additional Task for 5000-level Students</h3>
+        <p>
+          For this task, I modified the code from Task 5. I specified three tones: C5, D5, and F5,
+            corresponding to 523.3Hz, 587.3Hz, and 698.5Hz respectively. If the frequency detected by the microphone is
+            within ±5 Hz of any of these three specified tones, the corresponding tone is output.
+        </p>
+        <div class="media">
+      <!-- Replace YOUTUBE_ID with your video id -->
+      <iframe class="video"
+        src="https://www.youtube.com/embed/Hr0TVrk15wA"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+        <figure class="media">
+      <img class="img-vert" src="lab1_assets/p3.jpg"/>
+    </figure>
+      </section>
+
+      <section class="report-section">
+        <h2>Lab 1B</h2>
+
+        <h3>Prelab</h3>
+        <p>
+          In the pre-lab section, I downloaded Python, obtained the MAC address, activated the virtual environment,
+            and installed the necessary packages.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-small" src="lab1_assets/p4.jpg"/>
+      <img class="img-vert" src="lab1_assets/p5.png"/>
+    </figure>
+
+        <h3>Configuration</h3>
+        <p>
+          In the configuration section, I generated a UUID for Bluetooth communication between the computer and
+            the development board, and configured my MAC address and UUID in the corresponding files.
+        </p>
+        <figure class="media">
+      <img class="img-vert" src="lab1_assets/p6.png"/>
+      <img class="img-vert" src="lab1_assets/p7.png"/>
+    </figure>
+
+        <h3>Task 1 ECHO</h3>
+        <p>
+          In this task, I first successfully connected to Bluetooth, programmed and sent the ECHO function,
+            allowing the development board to receive the string, add the extra string "This robot says:" to the beginning,
+            and then send it to the computer.
+        </p>
+        <figure class="media">
+      <img class="img-vert" src="lab1_assets/p8.png"/>
+      <img class="img-vert" src="lab1_assets/p9.png"/>
+    </figure>
+
+        <h3>Task 2 SEND_THREE_FLOATS</h3>
+        <p>
+          In this task, I wrote a function that first checks if three numbers are passed as input,
+            and then prints them out sequentially via the serial port.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab1_assets/p10.png" />
+      <img class="img-vert img-tiny" src="lab1_assets/p11.png" />
+    </figure>
+
+        <h3>Task 3 GET_TIME_MILLIS</h3>
+        <p>
+          In this task, the time is obtained using the millis() function and returned to the computer as a string variable defined by EString.
+        </p>
+        <figure class="media">
+      <img class="img-vert" src="lab1_assets/p12.png" />
+      <img class="img-vert" src="lab1_assets/p13.png" />
+    </figure>
+
+        <h3>Task 4 Notification</h3>
+        <p>
+          For this task, I defined a function called notification_handler. This function converts the data from the Arduino,
+            which is in array format, into a string format and then prints it. As we can see,
+            running the GET_TIME_MILLIS command immediately displays the current time on the computer.
+        </p>
+        <figure class="media">
+      <img class="img-vert" src="lab1_assets/p14.png"/>
+    </figure>
+
+        <h3>Task 5 TIME_LOOP</h3>
+        <p>
+          For this task, I created a new function called TIME_LOOP.  On the computer side, I set a test time, which I set to 5000ms.
+            On the Arduino side, I constructed a loop that transmits the time and its corresponding sequence number to the computer during the specified time.
+            From the results, it can be seen that 286 time messages were transmitted within 5 seconds, so the transmission rate is 286/5 = 57.2 times per second.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab1_assets/p15.png"/>
+      <img class="img-vert img-small" src="lab1_assets/p16.png"/>
+    </figure>
+
+        <h3>Task 6 SEND_TIME_DATA</h3>
+        <p>
+          For this task, I created a new function called SEND_TIME_DATA.  First, the data is stored in an array on the Arduino side, with a maximum capacity of 500 elements.
+          Then, this data is sent to the computer all at once. The results show that 500 messages were transmitted within 42731-42705=26ms, achieving a transmission rate of 19kHz.
+        </p>
+        <figure class="media">
+      <img class="img-vert" src="lab1_assets/p17.png"/>
+      <img class="img-vert img-tiny" src="lab1_assets/p18.png"/>
+    </figure>
+
+        <h3>Task 7 GET_TEMP_READINGS</h3>
+        <p>
+          For this task, I created a new function called GET_TEMP_READINGS, built two arrays to store the time and temperature respectively,
+            used the getTempDegF function to obtain the temperature, and then sent all the data to the computer.
+        </p>
+        <figure class="media">
+      <img class="img-vert" src="lab1_assets/p19.png"/>
+      <img class="img-vert img-small" src="lab1_assets/p20.png"/>
+    </figure>
+
+        <h3>Task 8 Difference between Two Methods</h3>
+        <p>
+          In this experiment, we used two methods to collect data. Task 5 used a method of collecting and sending data simultaneously,
+            while Task 6 collected all the data first and then sent it out in a batch.
+        </p>
+        <p>
+          The advantages of the first method are: 1. Real-time data monitoring; 2. No need for additional memory.
+            The disadvantages are: 1. Low transmission rate, approximately 57 data points per second;
+            2. Data is not stored, so data may be lost if the Bluetooth connection is unstable.
+        </p>
+        <p>
+          The advantages of the second method are: 1. High transmission rate, reaching 19kHz;
+            2. Data can be stored in an array, ensuring data preservation.
+            The disadvantages are: 1. Data transmission may not be real-time, as data is collected first before being transmitted to the computer;
+            2. We must consider memory limitations, as data cannot be stored indefinitely.
+        </p>
+        <p>
+          Considering that the type of t is unsigned long, and each t occupies 4 bytes,
+            the maximum amount of data that can be sent if all 384kB are used is: 384kB / 4B = 96k.
+        </p>
+        <h3>Additional Tasks for 5000-level Students</h3>
+        <h3>Task 9 Effective Data Rate and Overhead</h3>
+        <p>
+          For this task, I created a REPLY function that, upon receiving a size value, transmits the corresponding
+            number of 'A' characters to the computer. The computer then uses a for loop to calculate the time efficiency for each given size.
+            The experimental results show that the data transmission rate increases linearly with the increase in packet size, indicating that larger data packets can reduce communication overhead.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab1_assets/p21.png"/>
+      <img class="img-vert img-mid" src="lab1_assets/p22.png"/>
+      <img class="img-vert img-mid" src="lab1_assets/p23.png"/>
+    </figure>
+
+        <h3>Task 9 Effective Data Rate and Overhead</h3>
+        <p>
+          For this task, I created a RELIABILITY function that transmitted data to the computer 2000 times.
+            An array was created on the computer to receive the data, but ultimately only 145 data points were received.
+            This indicates that the computer cannot receive all the information from the robot at high data rates.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab1_assets/p24.png"/>
+      <img class="img-vert img-mid" src="lab1_assets/p25.png"/>
+    </figure>
+      </section>
+
+      <section class="report-section">
+        <h2>Discussion</h2>
+        <p>
+          In this lab, I feel that my biggest takeaway was gaining practical experience with Bluetooth communication between the development board and the computer,
+            and learning how to analyze the data transmission efficiency during this process and how to improve it.
+        </p>
+      </section>
+
+    </article>
+  </main>
+</body>
+</html>
+

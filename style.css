@@ -88,6 +88,163 @@ body{
   margin: 0 0 10px 0;
 }
 
+
+/* Labs section */
+.section-subtitle{
+  margin: 6px 0 18px 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.labs{
+  margin-top: 28px;
+  padding-bottom: 36px;
+  border-top: 1px solid var(--line);
+  padding-top: 26px;
+}
+
+.lab-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lab-card{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 16px 14px 16px;
+  background: #fff;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.lab-card:hover{
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+.lab-card-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.lab-tag{
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.lab-status{
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.lab-status.in-progress{
+  border-color: var(--accent);
+  color: #0b6476;
+  background: rgba(127,230,255,0.25);
+}
+
+.lab-status.coming-soon{
+  background: rgba(0,0,0,0.03);
+}
+
+.lab-title{
+  margin: 0 0 6px 0;
+  font-size: 18px;
+}
+
+.lab-desc{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Responsive labs grid */
+@media (max-width: 980px){
+  .lab-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .lab-grid{ grid-template-columns: 1fr; }
+}
+
+
+/* Lab report pages */
+.breadcrumbs{
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.breadcrumbs a{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+.breadcrumbs a:hover{
+  border-bottom-color: var(--accent);
+}
+
+.report{
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 10px;
+}
+
+.report h1{
+  margin: 0 0 8px 0;
+  font-size: 30px;
+}
+
+.report-meta{
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.report-section{
+  margin: 18px 0;
+}
+.report-section h2{
+  margin: 0 0 12px 0;
+  font-size: 22px;
+}
+.report-section p{
+  margin: 0 0 14px 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.8;
+}
+.report-section ul{
+  margin: 0 0 14px 20px;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.8;
+}
+.codeblock{
+  background: rgba(0,0,0,0.04);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 /* Mobile */
 @media (max-width: 640px){
   .about-row{
@@ -96,3 +253,22 @@ body{
   }
   .about-text{ max-width: 520px; }
 }
+
+/* ===== Vertical image layout for lab reports ===== */
+
+.img-vert{
+  display: block;
+  width: min(900px, 100%);
+  margin: 18px auto;     /* 上下留白，居中 */
+  height: auto;          /* 不裁切、不变形 */
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+}
+.img-tiny{ width: min(360px, 100%); }
+.img-small{ width: min(520px, 100%); }
+.img-mid{   width: min(760px, 100%); }
+
+/* Lab media helpers */
+.media{margin:14px 0;}
+.media img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.08);}
+.video{width:100%;aspect-ratio:16/9;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.08);}
