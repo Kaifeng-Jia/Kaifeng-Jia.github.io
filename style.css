@@ -274,6 +274,7 @@ body{
 .img-tiny{ width: min(360px, 100%); }
 .img-small{ width: min(520px, 100%); }
 .img-mid{   width: min(760px, 100%); }
+.img-large{   width: min(1080px, 100%); }
 
 /* Lab media helpers */
 .media{margin:14px 0;}
