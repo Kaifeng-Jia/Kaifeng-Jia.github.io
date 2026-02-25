@@ -52,7 +52,7 @@
           I ran the example file and got the following output. The output address is 0x29, which does not match the expected 0x52 in Prelab. This is because the least significant bit of the 8-bit address in I2C is the read/write bit, while the Arduino library uses a 7-bit address. The original 0x52 is shifted one bit to the right to get 0x29.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab3_assets/3.png"/>
+      <img class="img-vert img-small" src="lab3_assets/3.png"/>
     </figure>
       </section>
 
@@ -79,7 +79,7 @@
            To measure the accuracy and repeatability of the sensor, I selected three locations (150mm, 200mm, 300mm) for measurement. After extracting the data, I calculated the average error to represent the accuracy and the standard deviation to represent the repeatability. The results are shown in the figure. My conclusions are: (1) The accuracy improves when the sensor is further away from the object; (2) The repeatability of the sensor is good.
         </p>
         <figure class="media">
-      <img class="img-vert img-small" src="lab3_assets/6.png"/>
+      <img class="img-vert img-mid" src="lab3_assets/6.png"/>
     </figure>
         <h2>Ranging Time</h2>
         <p>
@@ -97,7 +97,7 @@
         </p>
         <figure class="media">
       <img class="img-vert img-small" src="lab3_assets/8.jpg"/>
-      <img class="img-vert img-small" src="lab3_assets/2tof.jpg"/>      
+      <img class="img-vert img-small" src="lab3_assets/2tof.jpg"/>
     </figure>
       </section>
 
@@ -107,7 +107,7 @@
            I waited until both ToF data were ready before outputting them. Calculations showed that the ToF data output frequency was approximately 10Hz, far lower than the Artemis clock frequency. Therefore, the main limiting factor was the ToF read speed.
         </p>
         <figure class="media">
-      <img class="img-vert img-small" src="lab3_assets/9.png"/>
+      <img class="img-vert img-mid" src="lab3_assets/9.png"/>
     </figure>
       </section>
 
@@ -117,7 +117,7 @@
            I created a new command to read data from both the IMU and ToF simultaneously, and then transferred the data to my computer via Bluetooth. Below is the main code on my Arduino side.
         </p>
         <figure class="media">
-      <img class="img-vert img-small" src="lab3_assets/10.png"/>
+      <img class="img-vert img-mid" src="lab3_assets/10.png"/>
     </figure>
         <p>
             Below is the data I received from Jupyter. Each time, I can receive five data points: from beginning to end, time, distances measured by the two TOFs, and the IMU pitch and roll.
@@ -129,8 +129,8 @@
             Below are the graphs I drew showing time versus distance and time versus IMU.
         </p>
         <figure class="media">
-      <img class="img-vert img-small" src="lab3_assets/12.png"/>
-      <img class="img-vert img-small" src="lab3_assets/13.png"/>
+      <img class="img-vert img-mid" src="lab3_assets/12.png"/>
+      <img class="img-vert img-mid" src="lab3_assets/13.png"/>
     </figure>
       </section>
 
