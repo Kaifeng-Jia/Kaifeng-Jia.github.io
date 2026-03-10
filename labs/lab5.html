@@ -48,19 +48,19 @@
            In Task 1, the calculated value of kp was 0.09, but in subsequent practical applications, overshoot was severe. Therefore, I chose to set Kp to 0.08 and Ki and Kd to 0. Because I wanted the car to start slowly, I initially set Kp to 0.02, starting from approximately 2 meters. The results are as follows.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab5_assets/3.png" />
+      <img class="img-vert img-large" src="lab5_assets/3.png" />
     </figure>
         <p>
             As shown in the image above, the car stopped before the set point, so Ki needs to be increased to continue pushing the car to the set point. After repeated experiments, I determined that Ki should be 0.0004, and the results are as follows.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab5_assets/4.png" />
+      <img class="img-vert img-large" src="lab5_assets/4.png" />
     </figure>
         <p>
             Finally, the complete PID model was applied to the car. To allow the car to reach its maximum speed at 2 meters, Kp was set to 0.08. Once the speed increased, Pd needed to be set to brake the car. After repeated experiments, I finally set Kd to 0.05. I conducted tests at lengths of 8, 9, and 10 tiles (corresponding to 2.5m, 2.8m, and 3m), and the results are as follows.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab5_assets/5.png" />
+      <img class="img-vert img-mid" src="lab5_assets/5.png" />
     </figure>
         <h2>Task 3 Result</h2>
         <p>
@@ -111,32 +111,32 @@
           In lab3, the time-of-flight (TOF) data transmission frequency was measured to be approximately 17.5 Hz. I calculated the PID loop frequency to be approximately 109 Hz, about six times that of TOF, significantly faster than TOF.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab5_assets/6.png" />
+      <img class="img-vert img-mid" src="lab5_assets/6.png" />
     </figure>
         <p>
           To decouple these two rates, a linear extrapolation method was used: when no new TOF data is available, the current distance is estimated using the slope between the two most recent TOF readings. Below is the code I used to implement linear extrapolation. To prevent the estimated value from going too far as the extrapolation time is too long, if there is no new ToF data after more than 100ms, the extrapolation will stop.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab5_assets/7.png" />
+      <img class="img-vert img-mid" src="lab5_assets/7.png" />
     </figure>
         <p>
           Below is the result graph after the run. As you can see, the extrapolated values (orange) smoothly fill the gaps between the original ToF step sizes (blue), allowing the PID controller to obtain distance estimates more frequently without waiting for new sensor data.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab5_assets/8.png" />
+      <img class="img-vert img-mid" src="lab5_assets/8.png" />
     </figure>
         <h2>Task 5 Integrator Wind-up Protection (5000-level)</h2>
         <p>
           Without integral saturation protection, the integrator would over-accumulate integral values as the robot moves away from the setpoint, causing overshoot when reaching the target point. To prevent this, I limit the integral term to between -500 and 500. When the accumulated integral value exceeds this range, the integral value is truncated, thus preventing the PID output from becoming uncontrollably large.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab5_assets/9.png" />
+      <img class="img-vert img-mid" src="lab5_assets/9.png" />
     </figure>
         <p>
           The image below shows a comparison with and without Wind-up protection, demonstrating that with protection added, the robot can get closer to the set point.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab5_assets/10.png" />
+      <img class="img-vert img-mid" src="lab5_assets/10.png" />
     </figure>
 
         <h2>Task 6 Open Loop Control</h2>
@@ -144,7 +144,7 @@
           I wrote open-loop control code to combine axial turning and linear motion of the car.
         </p>
         <figure class="media">
-      <img class="img-vert img-tiny" src="lab4_assets/8.png" />
+      <img class="img-vert img-mid" src="lab4_assets/8.png" />
     </figure>
         <div class="media">
       <iframe class="video"
