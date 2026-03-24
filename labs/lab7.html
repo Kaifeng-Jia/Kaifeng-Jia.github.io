@@ -17,9 +17,125 @@
     </div>
 
     <article class="report">
-      <h1>Lab 7</h1>
+
+      <h1>Lab 7: Kalman Filter</h1>
+
+      <section class="report-section">
+        <h2>Task 1 Estimate Drag and Momentum</h2>
+        <p>
+           To implement a Kalman filter, the system must first be modeled. The following equations illustrate how the dynamic equations are derived, where x represents the distance from the robot to the wall, u is the control input, and the unknown parameters are d (the drag coefficient) and m (the inertia coefficient).
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/1.png"/>
+    </figure>
+        <p>
+            According to the following formula, when the robot accelerates from rest to steady state, the acceleration is 0. And if we normalize u to 1, we can calculate d as long as we know the velocity when the steady state is reached.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/2.png"/>
+    </figure>
+        <p>
+             Our system has a first-order exponential rising curve. By finding the rise time to reach 90% steady-state velocity, we can calculate m.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/3.png"/>
+    </figure>
+        <p>
+             Finally, after determining d and m, the state-space equations of the robot can be derived.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/4.png"/>
+    </figure>
+        <p>
+             I drove the robot toward a wall from a distance of 4 meters, operating at 55% of the maximum PWM speed, and generated a graph depicting the relationship between velocity and time.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/5.png"/>
+    </figure>
+        <p>
+             Note that after 1.5 seconds, the robot collided with the wall, causing fluctuations in its velocity. I observed that the robot reached a steady-state velocity at approximately 0.75 seconds; therefore, I calculated the average velocity for the time interval between 0.75 and 1.25 seconds, and subsequently determined the time required to reach 90% of this average velocity, as illustrated in the figure below.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/6.png"/>
+    </figure>
+        <p>
+             Through calculation, I obtained d = 0.000495 and m = 0.000139.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/7.png"/>
+    </figure>
+        <h2>Task 2 Initialize KF</h2>
+        <p>
+          With the values for d and m, I can therefore calculate matrices A and B; however, since both the commands we transmit and the data we receive are discrete rather than continuous, it is necessary to discretize matrices A and B.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/8.png"/>
+    </figure>
+        <p>
+          In lab5, I obtained the control loop time dt as 9ms, and the discretized Ad and Bd matrices are calculated as follows.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/9.png"/>
+    </figure>
+        <p>
+          Next, the system needs to be configured with process noise sigma1 and sigma2 for position and velocity, as well as measurement noise sigma3. The calculation code is as follows. Here, I used 0.02 for dx, which represents a measurement error of 20mm. Calculated sigma1 = sigma2 = 105.41, sigma3 = 70.71.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/10.png"/>
+    </figure>
+        <h2>Task 3 Implement and Test KF in Python</h2>
+        <p>
+           Below is my corresponding control code. Like lab5, I selected 5 seconds as the sampling time.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab6_assets/7.png"/>
+    </figure>
+        <p>
+           Based on the Kalman Filter equations, I used the code provided in the Lab Instructions to implement the Kalman filter, as follows:
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/11.png"/>
+    </figure>
+        <p>
+           Subsequently, I used the data from Lab 5 to test the performance of the Kalman filter. Based on our chosen parameters, our system places slightly greater trust in the measurement data. The results are shown below; as can be seen, the fitting performance is excellent, so this set of parameters can be applied to the robot.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/12.png"/>
+    </figure>
+        <h2>Task 4 Implement KF on Robot</h2>
+        <p>
+           I modified the PID control function in Lab 5, replacing the linear extrapolation with a Kalman filter. Specifically, whenever a new TOF value becomes available, I use that new value to perform both the prediction and update steps; conversely, when no new TOF value is received, I utilize the previous value for these steps, thereby preventing the sigma value from diverging.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/13.png" />
+    </figure>
+        <p>
+           Visualizing the data reveals that the Kalman filter is highly effective; a demonstration video is provided below.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab7_assets/14.png" />
+    </figure>
+        <div class="media">
+      <iframe class="video"
+        src="https://www.youtube.com/embed/ZXC926HbRUs"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+
+      </section>
+
+      <section class="report-section">
+        <h2>Statement</h2>
+        <p>
+          I got much help from Yueming Liu's page.
+        </p>
+      </section>
 
     </article>
   </main>
 </body>
 </html>
+
+
+
