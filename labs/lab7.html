@@ -26,7 +26,7 @@
            To implement a Kalman filter, the system must first be modeled. The following equations illustrate how the dynamic equations are derived, where x represents the distance from the robot to the wall, u is the control input, and the unknown parameters are d (the drag coefficient) and m (the inertia coefficient).
         </p>
         <figure class="media">
-      <img class="img-vert img-mid" src="lab7_assets/1.png"/>
+      <img class="img-vert img-small" src="lab7_assets/1.png"/>
     </figure>
         <p>
             According to the following formula, when the robot accelerates from rest to steady state, the acceleration is 0. And if we normalize u to 1, we can calculate d as long as we know the velocity when the steady state is reached.
@@ -62,7 +62,7 @@
              Through calculation, I obtained d = 0.000495 and m = 0.000139.
         </p>
         <figure class="media">
-      <img class="img-vert img-mid" src="lab7_assets/7.png"/>
+      <img class="img-vert img-small" src="lab7_assets/7.png"/>
     </figure>
         <h2>Task 2 Initialize KF</h2>
         <p>
@@ -75,7 +75,7 @@
           In lab5, I obtained the control loop time dt as 9ms, and the discretized Ad and Bd matrices are calculated as follows.
         </p>
         <figure class="media">
-      <img class="img-vert img-mid" src="lab7_assets/9.png"/>
+      <img class="img-vert img-small" src="lab7_assets/9.png"/>
     </figure>
         <p>
           Next, the system needs to be configured with process noise sigma1 and sigma2 for position and velocity, as well as measurement noise sigma3. The calculation code is as follows. Here, I used 0.02 for dx, which represents a measurement error of 20mm. Calculated sigma1 = sigma2 = 105.41, sigma3 = 70.71.
