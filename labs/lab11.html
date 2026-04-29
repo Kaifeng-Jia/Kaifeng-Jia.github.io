@@ -17,9 +17,77 @@
     </div>
 
     <article class="report">
-      <h1>Lab 11</h1>
+
+      <h1>Lab 11: Localization on the Real Robot</h1>
+
+      <section class="report-section">
+        <h2>Overview</h2>
+        <p>
+          In lab 10, we implemented the Bayes Filter in simulation using a virtual robot. In this lab, we will apply it to a real robot. Since the motion noise is too high to make prediction step useful, we only run the update step.
+        </p>
+
+        <h2>Simulation</h2>
+        <p>
+          I first verified the Bayes Filter implementation by running code with virtual robot. The simulation confirms that the localization code is functioning correctly. We can see that the green and blue lines represent the ground truth pose and the trajectory predicted by the Bayes Filter, respectively, while the red trajectory represents the odometry prediction, which exhibits severe drift.
+        </p>
+
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/1.png"/>
+    </figure>
+        <h2>Jupyter Implementation</h2>
+        <p>
+          On the Jupyter side, I reused the code from the mapping phase; the robot rotates 360 degrees in place, sampling 18 points to perform predictions. Because I used an async coroutine to wait for the robot to finish sampling and uploading data, I used the await keyword.
+        </p>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/2.png"/>
+    </figure>
+
+        <h2>Result</h2>
+        <p>
+          Below are the prediction results obtained from the four points [5, -3], [5, 3], [-3, -2], and [0, 3], respectively. Overall, compared to the simulation results, the localization performance of the actual robot was unexpectedly good. This is because the update step relies solely on sensor readings rather than odometry; consequently, the robot's motion noise does not affect the results.
+        </p>
+
+        <h2>[5,-3]</h2>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/3.png"/>
+    </figure>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/4.png"/>
+    </figure>
+        <h2>[-3,-2]</h2>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/5.png"/>
+    </figure>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/6.png"/>
+    </figure>
+        <h2>[5,3]</h2>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/7.png"/>
+    </figure>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/8.png"/>
+    </figure>
+        <h2>[0,3]</h2>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/9.png"/>
+    </figure>
+        <figure class="media">
+      <img class="img-vert img-mid" src="lab11_assets/10.png"/>
+    </figure>
+   
+        <h2>Statement</h2>
+        <p>
+          I got much help from Yueming Liu's page.
+        </p>
+      </section>
 
     </article>
   </main>
 </body>
 </html>
+
+
+
+
+
