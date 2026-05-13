@@ -147,7 +147,7 @@ def nav_drive(tof_mm):
 
         <h2>Collaboration</h2>
         <p>
-          I collaborated with Donghao Hong on this lab. We used the same waypoints and the same offboard-planning, onboard-execution architecture. The key difference was in straight-line control: Donghao used open-loop timed driving calibrated with a <code>ms_per_ft</code> parameter, while I used closed-loop ToF position PID. The closed-loop approach is theoretically more robust to battery level variation and floor friction, but places a stricter requirement on the accuracy of the ToF setpoint — which is why I measured each setpoint physically rather than relying on ray casting alone.
+          我与 Donghao Hong 共同完成了这项实验。我们方案的关键差异在于直线行驶控制方面：Donghao 采用的是基于距离的开环定时驱动，而我则采用了基于 ToF 传感器的闭环位置 PID 控制。从结果来看，Donghao 的方法让小车匀速行驶，稳定性更高，但是需要更准确的电机控制时间；我的方法机器人到达每个点的鲁棒性更好，因为有 PID 控制位置，但是问题是小车行驶速度太快，误差积累更大。详见 <a href="https://donghaohong.github.io/Fast_Robots/">他的报告</a>。
         </p>
 
         <h2>Results</h2>
