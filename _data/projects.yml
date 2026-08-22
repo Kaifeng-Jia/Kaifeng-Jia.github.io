@@ -5,3 +5,9 @@ main:
     image: "./assets/img/fast-robots-video-poster.jpg"
     video: "./assets/video/fast-robots.mp4"
     link: "https://kaifeng-jia.github.io/fast-robots/"
+
+  - title: "ECE 5725: Smart Desk Assistant"
+    authors: "PiTFT-based assistant with voice interaction and face tracking"
+    journal: "Cornell University"
+    image: "./assets/img/ece5725-smart-desk-assistant.jpg"
+    link: "https://kaifeng-jia.github.io/ECE5725/"
