@@ -19,8 +19,4 @@ Master of Engineering (M.Eng.) in Electrical and Computer Engineering
 
 ## Projects
 
-### [ECE 5160: Fast Robots](https://kaifeng-jia.github.io/fast-robots/)
-
-A collection of robotics lab reports and course projects completed at Cornell University.
-
-[View project website](https://kaifeng-jia.github.io/fast-robots/) · [GitHub repository](https://github.com/Kaifeng-Jia/fast-robots)
+{% include publications.html items=site.data.projects.main %}

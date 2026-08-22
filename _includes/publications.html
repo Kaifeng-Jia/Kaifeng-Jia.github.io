@@ -6,14 +6,15 @@
   <ol class="bibliography" style="list-style: decimal; padding: revert;" reversed>
   {% endif %}
 
-    {% for pub in site.data.publications.main %}
+    {% assign publications = include.items | default: site.data.publications.main %}
+    {% for pub in publications %}
 
     <li>
       <div class="pub-row">
         {% if site.enable_publication_thumbnails %}
         <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
           {% if pub.image %}
-          <img src="{{ pub.image }}" class="teaser img-fluid z-depth-1">
+          <img src="{{ pub.image }}" alt="{{ pub.title }}" class="teaser img-fluid z-depth-1">
           {% if pub.journal_short %}
           <abbr class="badge">{{ pub.journal_short }}</abbr>
           {% endif %}
