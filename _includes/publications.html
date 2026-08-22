@@ -13,7 +13,15 @@
       <div class="pub-row">
         {% if site.enable_publication_thumbnails %}
         <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-          {% if pub.image %}
+          {% if pub.video %}
+          <video class="teaser img-fluid z-depth-1" autoplay muted loop playsinline preload="metadata"
+            poster="{{ pub.image }}" aria-hidden="true">
+            <source src="{{ pub.video }}" type="video/mp4">
+          </video>
+          {% if pub.journal_short %}
+          <abbr class="badge">{{ pub.journal_short }}</abbr>
+          {% endif %}
+          {% elsif pub.image %}
           <img src="{{ pub.image }}" alt="{{ pub.title }}" class="teaser img-fluid z-depth-1">
           {% if pub.journal_short %}
           <abbr class="badge">{{ pub.journal_short }}</abbr>

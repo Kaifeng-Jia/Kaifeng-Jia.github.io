@@ -2,5 +2,6 @@ main:
   - title: "ECE 5160: Fast Robots"
     authors: "Robotics lab reports and course projects"
     journal: "Cornell University"
-    image: "./assets/img/fast-robots.png"
+    image: "./assets/img/fast-robots-video-poster.jpg"
+    video: "./assets/video/fast-robots.mp4"
     link: "https://kaifeng-jia.github.io/fast-robots/"
