@@ -1,0 +1,17 @@
+cv:
+  name: Kaifeng Jia
+  label: M.Eng. Student in Electrical and Computer Engineering
+  location: Ithaca, New York
+  image: ""
+  summary: M.Eng. student at Cornell University with research interests in robotics and robot learning.
+
+  social_networks: []
+
+  sections:
+    Education:
+      - institution: Cornell University
+        location: Ithaca, New York
+        area: Electrical and Computer Engineering
+        studyType: Master of Engineering (M.Eng.)
+        highlights:
+          - Research interests in Robotics and Robot Learning
