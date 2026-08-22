@@ -1,21 +1,35 @@
-_site
-.bundle
-.DS_store
-.idea
-.jekyll-cache
-.jekyll-metadata
-.ruby-version
-.sass-cache
-.tweet-cache
-.venv
-assets/libs/
-assets/rendercv/rendercv_output/*.typ
-al-folio-upgrade-report.md
-node_modules/
-output/playwright/
-test-results/
-vendor
+git-update.sh
 
-# Python bytecode from bin/ helper scripts
-__pycache__/
-*.pyc
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Ruby/Bundler
+.bundle/
+vendor/
+Gemfile.lock
+*.gem
+.ruby-version
+
+# OS
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
