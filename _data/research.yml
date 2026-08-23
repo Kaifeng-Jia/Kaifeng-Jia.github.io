@@ -4,6 +4,15 @@ main:
       Using OMOMO human–object interaction demonstrations and an OmniRetarget-based pipeline, we generate motion references for Unitree G1 humanoids and train single-agent whole-body motion-tracking policies. These pretrained policies are then used to initialize a multi-agent reinforcement learning framework for cooperative humanoid push and pull tasks. We are currently investigating the emergence of cooperative behaviors among multiple humanoid agents without explicitly assigned roles.
     institution: "Carnegie Mellon University"
     mentor: "Hao E. Zhang"
-    year: "2026.06.01 – Present"
+    year: "2026.06 – Present"
     image: "./assets/img/cmu-cooperative-humanoid-manipulation-poster.jpg"
     video: "./assets/video/cmu-cooperative-humanoid-manipulation.mp4"
+
+  - title: "Physics-Aware Architecture for Metalens-Based Monocular Depth (Present)"
+    description: >-
+      Building on <em>Physically Grounded Monocular Depth via Nanophotonic Wavefront Encoding</em>, I am designing a PromptDA-inspired architecture that extracts x- and y-direction shifts from polarization images and integrates these optical cues into a depth foundation model for metric depth estimation.
+    institution: "New York University"
+    mentor: "Bingxuan Li"
+    year: "2026.05 – Present"
+    image: "./assets/img/nyu-metalens-depth-shift-poster.jpg"
+    video: "./assets/video/nyu-metalens-depth-shifts.mp4"
