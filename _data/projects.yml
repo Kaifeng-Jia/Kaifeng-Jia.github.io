@@ -1,6 +1,6 @@
 main:
   - title: "Olin Library Navigation"
-    authors: "Indoor navigation prototype combining floor-plan graph generation, shortest-path planning, and AR guidance"
+    authors: "Indoor navigation for Olin Library, combining floor-plan graph generation, SLAM, path planning, and AR guidance"
     journal: "Cornell University M.Eng. Design Project"
     image: "./assets/img/olin-library-navigation.jpg"
     link: "https://github.com/Kaifeng-Jia/OlinLibraryNavi"
