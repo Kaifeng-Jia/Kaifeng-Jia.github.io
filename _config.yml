@@ -19,6 +19,7 @@ avatar: ./assets/img/profile.jpg
 # Sidebar Links
 email: kj366@cornell.edu
 github_link: https://github.com/Kaifeng-Jia
+cv_link: ./assets/pdf/Kaifeng_Jia_CV.pdf
 
 # Search Engine Optimization (SEO)
 description: Academic personal homepage of Kaifeng Jia, an M.Eng. student in Electrical and Computer Engineering at Cornell University interested in robotics and robot learning.
