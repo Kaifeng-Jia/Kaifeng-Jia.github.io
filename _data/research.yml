@@ -1,6 +1,6 @@
 main:
   - title: "Cooperative Multi-Agent Humanoid Manipulation (Present)"
-    authors: >-
+    description: >-
       Using OMOMO human–object interaction demonstrations and an OmniRetarget-based pipeline, we generate motion references for Unitree G1 humanoids and train single-agent whole-body motion-tracking policies. These pretrained policies are then used to initialize a multi-agent reinforcement learning framework for cooperative humanoid push and pull tasks. We are currently investigating the emergence of cooperative behaviors among multiple humanoid agents without explicitly assigned roles.
     journal: "Carnegie Mellon University · Research Mentor: Hao E. Zhang"
     year: "2026.06.01 – Present"

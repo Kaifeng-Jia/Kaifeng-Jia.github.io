@@ -14,7 +14,7 @@ I am an M.Eng. student in Electrical and Computer Engineering at Cornell Univers
 
 ## Research
 
-{% include publications.html items=site.data.research.main %}
+{% include publications.html items=site.data.research.main class_name="research-publications" %}
 
 ## Education
 

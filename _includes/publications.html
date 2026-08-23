@@ -1,4 +1,4 @@
-<div class="publications">
+<div class="publications{% if include.class_name %} {{ include.class_name }}{% endif %}">
 
   {% if site.enable_publication_thumbnails %}
   <ol class="bibliography">
@@ -41,6 +41,15 @@
           {% else %}
           <div class="title">{{ pub.title }}</div>
           {% endif %}
+          {% if pub.description %}
+          <div class="periodical">
+            <em>{{ pub.journal }}</em>
+            {% if pub.year %}
+            ({{ pub.year }})
+            {% endif %}
+          </div>
+          <div class="description">{{ pub.description }}</div>
+          {% else %}
           <div class="author">{{ pub.authors }}</div>
           <div class="periodical">
             <em>{{ pub.journal }}</em>
@@ -48,6 +57,7 @@
             ({{ pub.year }})
             {% endif %}
           </div>
+          {% endif %}
           <div class="links">
             {% if pub.pdf %}
             <a href="{{ pub.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank"
