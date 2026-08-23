@@ -6,6 +6,8 @@ layout: homepage
 
 I am an M.Eng. student in Electrical and Computer Engineering at Cornell University, with research interests in robotics and robot learning. I am interested in developing learning-enabled robotic systems that can adapt, generalize, and operate reliably in the physical world.
 
+**I am currently seeking Ph.D. opportunities in Robot Learning.**
+
 ## Research Interests
 
 - **Robotics**
