@@ -12,6 +12,10 @@ I am an M.Eng. student in Electrical and Computer Engineering at Cornell Univers
 - **Robot Learning**
 - **Learning-enabled robotic systems**
 
+## Research
+
+{% include publications.html items=site.data.research.main %}
+
 ## Education
 
 **Cornell University**  
