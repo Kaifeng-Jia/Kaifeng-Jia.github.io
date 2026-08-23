@@ -20,8 +20,13 @@ I am an M.Eng. student in Electrical and Computer Engineering at Cornell Univers
 
 ## Education
 
-**Cornell University**  
-Master of Engineering (M.Eng.) in Electrical and Computer Engineering
+**Cornell University**<br>
+Master of Engineering (M.Eng.) in Electrical and Computer Engineering<br>
+*2025.08 – 2026.12 (Expected)*
+
+**Hefei University of Technology**<br>
+Bachelor of Engineering (B.Eng.) in Optoelectronic Information Science and Engineering<br>
+*2021.09 – 2025.05*
 
 ## Projects
 
