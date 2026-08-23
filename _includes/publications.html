@@ -42,10 +42,14 @@
           <div class="title">{{ pub.title }}</div>
           {% endif %}
           {% if pub.description %}
-          <div class="periodical">
-            <em>{{ pub.journal }}</em>
+          <div class="periodical research-meta">
+            <span class="research-meta-line"><em>{{ pub.institution | default: pub.journal }}</em>
             {% if pub.year %}
             ({{ pub.year }})
+            {% endif %}
+            </span>
+            {% if pub.mentor %}
+            <span class="research-meta-line"><em>Research Mentor: {{ pub.mentor }}</em></span>
             {% endif %}
           </div>
           <div class="description">{{ pub.description }}</div>
