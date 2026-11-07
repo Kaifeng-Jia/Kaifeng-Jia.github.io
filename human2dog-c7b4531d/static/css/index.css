@@ -1,0 +1,220 @@
+/* Human2Dog Retarget project page.
+   Base: Nerfies project page index.css (github.com/nerfies/nerfies.github.io, CC BY-SA 4.0).
+   Captioned video grid: after .simulation-grid / .simulation-item / .simulation-label in the
+   OmniRetarget project page (github.com/omniretarget/omniretarget.github.io).
+   Single light theme, as on those pages. Colors are Bulma's defaults, kept as tokens. */
+:root {
+  --bg: #ffffff;
+  --text: #4a4a4a;          /* Bulma body text */
+  --heading: #363636;       /* Bulma headings */
+  --muted: #666666;         /* captions, as in OmniRetarget */
+  --label: #333333;         /* video labels, as in OmniRetarget */
+  --link: #3273dc;          /* Bulma link */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --code-bg: #f5f5f5;
+  --font-title: 'Google Sans', 'Noto Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Noto Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+
+html, body { background: var(--bg); color: var(--text); }
+body { font-family: var(--font-body); }
+a { color: var(--link); }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+
+/* Side gutter on each container; sections keep only vertical padding. */
+.container {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.section, .hero-body, .footer { padding-left: 0; padding-right: 0; }
+.section { padding-block: 2.5rem; }
+
+.title, .subtitle { color: var(--heading); text-wrap: balance; }
+.title { font-family: var(--font-title); font-weight: 500; }
+
+/* ---------- title block (Nerfies / OmniRetarget) ---------- */
+.hero-body { padding-block: 3rem 1.5rem; }
+.publication-title { font-family: var(--font-title); }
+.title.publication-title { font-weight: 700; margin-bottom: 1rem; }
+.publication-subtitle { font-weight: 400; line-height: 1.3; }
+.publication-authors { font-family: var(--font-title); color: var(--heading); }
+.author-block { display: inline-block; }
+.publication-venue {
+  font-family: var(--font-title);
+  font-style: italic;
+  color: #555;
+  margin-top: 0.5rem;
+}
+.publication-links { margin-top: 1.25rem; }
+.link-block { display: inline-block; margin: 5px 3px; }
+.link-block .icon svg { width: 1.1em; height: 1.1em; }
+.button.is-soon { opacity: 0.55; cursor: default; pointer-events: none; }
+
+/* ---------- teaser + TL;DR ---------- */
+.teaser { padding-top: 0; padding-bottom: 1rem; }
+.teaser-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #000;
+}
+.flagship-caption {
+  font-size: 1rem;
+  color: var(--heading);
+  text-align: center;
+  margin-top: 1.25rem;
+}
+.flagship-note { font-size: 0.875rem; color: var(--muted); margin-top: 0.35rem; }
+.tldr { padding-top: 1.5rem; padding-bottom: 1rem; }
+.tldr-text {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--heading);
+  text-align: center;
+}
+
+/* ---------- prose ---------- */
+.abstract-text p, .content p, .content li { font-size: 0.95rem; line-height: 1.6; }
+.content { color: var(--text); }
+.content b, .content strong { color: var(--heading); }
+.section-lead {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text);
+  max-width: 48rem;
+  margin: -0.75rem auto 1.75rem;
+  line-height: 1.55;
+}
+.subsection { margin-top: 2.5rem; }
+code {
+  background: var(--code-bg);
+  color: var(--heading);
+  font-size: 0.85em;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+}
+
+/* ---------- figures ---------- */
+.figure-block { margin: 0 auto 2rem; }
+.figure-block.figure-narrow { max-width: 640px; }
+.figure-img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.figure-img.is-framed { box-shadow: var(--card-shadow); }
+.video-card.card-narrow { width: 100%; max-width: 760px; justify-self: center; }
+.figure-caption {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 0.75rem;
+}
+.figure-caption b { color: var(--heading); }
+
+/* ---------- captioned video grid (after OmniRetarget) ---------- */
+.video-grid { display: grid; gap: 1.5rem; margin: 0 0 1rem; }
+.video-grid.cols-1 { grid-template-columns: minmax(0, 1fr); }
+.video-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.video-grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1023px) {
+  .video-grid.cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .video-grid.cols-2, .video-grid.cols-3 { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+}
+.video-card {
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-radius: 6px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+.video-card video, .video-card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background: #000;
+}
+.video-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--label);
+  line-height: 1.3;
+  text-align: center;
+  padding: 0.75rem 0.75rem 0.25rem;
+  margin: 0;
+}
+.video-label:last-child { padding-bottom: 0.75rem; }
+.video-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+  text-align: center;
+  padding: 0 0.9rem 0.85rem;
+  margin: 0;
+}
+.grid-note {
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* ---------- BibTeX / footer ---------- */
+#BibTeX pre { background: var(--code-bg); color: var(--heading); font-size: 0.85rem; }
+#BibTeX pre code { background: transparent; padding: 0; }
+.footer { background: #fafafa; padding-block: 2.5rem; }
+.footer .content { font-size: 0.875rem; color: var(--muted); }
+
+/* ---------- phones ---------- */
+@media (max-width: 768px) {
+  .title.is-1.publication-title { font-size: 2.25rem; }
+  .publication-subtitle.is-3 { font-size: 1.3rem; }
+  .title.is-3 { font-size: 1.5rem; }
+  .title.is-4 { font-size: 1.2rem; }
+  .tldr-text { font-size: 1.1rem; }
+  .has-text-justified { text-align: left !important; }
+  .section-lead { text-align: left; }
+  .section { padding-block: 2rem; }
+  .video-label { font-size: 0.8rem; padding: 0.5rem 0.5rem 0.2rem; }
+  .video-label:last-child { padding-bottom: 0.5rem; }
+}
+.objective { margin: 0.4rem auto 1.5rem; text-align: center; color: #222; font-size: 1.1rem; }
+.objective svg { max-width: 100%; height: auto; }
+.robot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; max-width: 1000px;
+  margin: 0 auto 2.5rem; }
+.robot-card { margin: 0; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: var(--card-shadow); }
+.robot-card img { display: block; width: 100%; height: auto; }
+.robot-card figcaption { padding: 0.7rem 1rem 0.9rem; text-align: center; border-top: 1px solid #eee; }
+.robot-name { display: block; font-family: var(--font-title); font-size: 1.5rem; font-weight: 700; color: var(--heading);
+  line-height: 1.2; }
+.robot-full { display: block; font-size: 0.9rem; color: var(--muted); margin-top: 0.15rem; }
+@media (max-width: 600px) { .robot-grid { gap: 1rem; } .robot-name { font-size: 1.15rem; } .robot-full { font-size: 0.78rem; } }
+.net-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem 1.1rem; margin: 0.7rem 0 0.2rem;
+  font-size: 0.8rem; color: var(--muted); }
+.net-key { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+.net-key i { width: 0.7rem; height: 0.7rem; border-radius: 50%; display: inline-block; }
+.net-key i.ring { box-shadow: inset 0 0 0 1px #999; }
+.net-key b { width: 1.1rem; height: 3px; border-radius: 2px; display: inline-block; }
+.method-step { margin-top: 3rem; padding-top: 2.25rem; border-top: 1px solid #e8e8e8; }
+.method-step:first-of-type { margin-top: 1.5rem; padding-top: 0; border-top: none; }
+.method-step-title { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-title);
+  font-size: 1.35rem; font-weight: 600; color: var(--heading); margin-bottom: 0.6rem; }
+.method-num { display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem;
+  border-radius: 50%; background: var(--heading); color: #fff; font-size: 0.95rem; font-weight: 600; flex: none; }
+.method-step-text { font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem; }
+.method-step .figure-block { margin-bottom: 0; }
+.method-step .objective { margin: 0.5rem auto 0; }
+.gait-figure video { background: #1d2c3b; }
+.gait-diagram { display: block; width: 100%; height: auto; margin-top: 0.9rem; font-family: "Google Sans", "Noto Sans", sans-serif; }
+.gait-diagram .gd-leg { font-size: 15px; font-weight: 700; fill: #363636; }
+.gait-diagram .gd-tick { font-size: 13px; fill: #777; }
+.gait-diagram .gd-track { fill: #eef0f3; }
+.gait-diagram .gd-axis { stroke: #bbb; stroke-width: 1; }
+.gait-diagram .gd-playhead { stroke: #222; stroke-width: 2; }

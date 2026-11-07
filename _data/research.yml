@@ -1,4 +1,14 @@
 main:
+  - title: "Human2Dog Retarget: Interaction Preserving Loco-Manipulation from Humans to Quadruped Manipulators (Present)"
+    description: >-
+      A CS 6758 course project with Feiyang Wang and Yucheng Fang. We retarget OMOMO human–object interaction demonstrations to quadruped manipulators. A per-frame optimization keeps the human–object interaction network, places the gripper on the human's contact point, and adds a designed quadruped gait; the same retargeter runs on four robots: B2-Z1, Go2-ARX5, Go2-PiPER and Spot-Arm. We are currently training whole-body tracking policies for B2-Z1 in Isaac Lab on the retargeted motions.
+    institution: "Cornell University"
+    year: "2026.09 – Present"
+    image: "./assets/img/human2dog-gait-poster.jpg"
+    video: "./assets/video/human2dog-gait.mp4"
+    link: "./human2dog-c7b4531d/"
+    page: "./human2dog-c7b4531d/"
+
   - title: "Cooperative Multi-Agent Humanoid Manipulation (Present)"
     description: >-
       Using OMOMO human–object interaction demonstrations and an OmniRetarget-based pipeline, we generate motion references for Unitree G1 humanoids and train single-agent whole-body motion-tracking policies. These pretrained policies are then used to initialize a multi-agent reinforcement learning framework for cooperative humanoid push and pull tasks. We are currently investigating the emergence of cooperative behaviors among multiple humanoid agents without explicitly assigned roles.
