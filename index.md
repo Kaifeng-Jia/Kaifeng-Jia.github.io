@@ -8,16 +8,6 @@ I am an M.Eng. student in Electrical and Computer Engineering at Cornell Univers
 
 **I am currently seeking Ph.D. opportunities in Robot Learning.**
 
-## Research Interests
-
-- **Robotics**
-- **Robot Learning**
-- **Learning-enabled robotic systems**
-
-## Research
-
-{% include publications.html items=site.data.research.main class_name="research-publications" %}
-
 ## Education
 
 **Cornell University**<br>
@@ -27,6 +17,16 @@ Master of Engineering (M.Eng.) in Electrical and Computer Engineering<br>
 **Hefei University of Technology**<br>
 Bachelor of Engineering (B.Eng.) in Optoelectronic Information Science and Engineering<br>
 *2021.09 – 2025.05*
+
+## Research Interests
+
+- **Robotics**
+- **Robot Learning**
+- **Learning-enabled robotic systems**
+
+## Research
+
+{% include publications.html items=site.data.research.main class_name="research-publications" %}
 
 ## Projects
 
